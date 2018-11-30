@@ -45,7 +45,7 @@ describe('Example', () => {
       .to.be.revertedWith('Not enough balance on sender account');
   });
 
-  it('should use library to add 7', async() => {
+  it.only('should use library to add 7', async() => {
     const myLibrary = await deployContract(wallet, MyLibrary, []);
     link(LibraryConsumer, 'MyLibrary', myLibrary.address);
     const libraryConsumer = await deployContract(wallet, LibraryConsumer, []);
